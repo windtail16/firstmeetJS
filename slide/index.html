@@ -84,16 +84,19 @@
         pageNum();
       }
     }
+    var preloadImage = function(path) {
+      var imgTag = document.createElement('img');
+      imgTag.src = path;
+    }
+    for (let i = 0; i < images.length; i++) {
+      preloadImage(images[i]);
+    }
     pageNum();
     document.getElementById('prev').onclick = function() {
       changeImage(-1);
-      console.log(current);
-      
     }
     document.getElementById('next').onclick = function() {
       changeImage(1);
-      console.log(current);
-      
     }
   </script>
 </body>
